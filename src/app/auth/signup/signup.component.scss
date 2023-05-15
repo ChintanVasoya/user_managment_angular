@@ -1,0 +1,33 @@
+.login-container{
+    max-width: 400px; 
+    margin: 60px auto 0;
+  }
+  
+  .error{
+    color: tomato; 
+    font-size: 12px; 
+    padding-top: 4px
+  }
+
+  .btn{
+     width: 100%;
+     margin-top: 10px;
+     margin-bottom: 10px;
+  }
+  .login{
+    background-color: #2b64aa;
+    border: aliceblue;
+  }
+  img{
+    width: 50%;
+    height: 50%;
+    border-radius: 7px;
+  }
+
+  .img_div{
+    text-align: center;
+    margin: 10px;
+  }
+  span{
+    color: red;
+  }

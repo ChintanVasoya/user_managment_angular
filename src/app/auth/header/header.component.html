@@ -1,0 +1,55 @@
+<section class="first_nav">
+  <nav>
+    <div class="container-fluid">
+      <div class="row">
+       
+        <!-- <div class="col-md-4 ">f</div> -->
+        <div class="col-md-12 col-lg-12 col">
+          <div class="menu">
+            <h3 style="">
+              Welcome {{constant.NAME}} <b> </b>
+              <br>
+              
+              <a (click)="Logout()" style="cursor: pointer;"> <b>[Logout]</b> </a>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</section>
+
+
+
+<section>
+  <div class="header-2">
+    <nav class="navbar navbar-expand-lg navbar-dark  p-0 px-2">
+     
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
+        aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main_nav">
+      
+        
+      
+        <ul class="navbar-nav" routerLink="/userlist">
+          <li class="nav-item dropdown" >
+            <a class="nav-link " [style.color]="user_flag == true ? 'white' : ''">
+              User list </a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav"  routerLink="/dashboard">
+          <li class="nav-item dropdown">
+            <a class="nav-link" [style.color]="profile_flag == true ? 'white' : ''">
+              My Profile </a>
+          </li>
+        </ul>
+      
+      </div>
+    </nav>
+  </div>
+
+</section>
+

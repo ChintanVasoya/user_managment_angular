@@ -1,0 +1,68 @@
+<app-header-main [profile_flag]="false" [user_flag]="true"></app-header-main>
+<div class="container-fluid p-0">
+    <div class="List-Create-user">
+        <div class="create-user-data">
+
+            
+            <form [formGroup]="listsForm" novalidate (ngSubmit)="onSubmit();">
+                <div class="fields">
+                    <div class="row">
+                        <div class="col-xl-2 col-lg-4 col-md-4 col">
+                            <div class="form-group form-md-line-input">
+                                <label for="EMPLOYEECODE">Search By Text<span></span></label>
+                                <span class="help-block"></span>
+                                <input formControlName="search" type="text" class="form-control1">
+                            </div>
+                        </div>
+                    <div class="col-md-4 col-lg-4 mt-auto">
+                        <button type="submit" class="btn-blue" >
+                            Search
+                        </button>
+                        <button class="btn2" type="reset" (click)="onReset()">
+                          Reset
+                        </button>
+                    </div>
+                    </div>
+                
+                    <div id="main_box" >
+                      <div class="card-body my-table-card-body mobile-my-table-card-body"
+                        style=" padding: 8px 0px 0px 0px; border-top:none !important">
+                        <div   class="table_scrooll">
+                          <table mat-table [dataSource]="dataSource" matSort (matSortChange)="sortData($event)"
+                            [matSortActive]="tableSetting.sort" [matSortDirection]="tableSetting.order">
+                            <ng-container *ngFor="let column of columns let idx = index"
+                              matColumnDef="{{column.field}}">
+                              <div>
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header style="color: black; ">
+                                  {{column.title}}
+                                </th>
+                              </div>
+
+                              <td mat-cell *matCellDef="let row" [class]="{'dfdfd' : column.title == 'Action'}">
+                                
+                                <span *ngIf="column.title!='Action'"><a [innerHTML]="row[column.field]"></a></span>
+
+                              </td>
+                            </ng-container>
+
+                            <tr class="mat-row sticky-header" mat-header-row
+                              *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                            <tr class="mat-row" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            <tr class="mat-row" *matNoDataRow>
+                              <td class="data_not_found  mat-cell justify-content-center">Data not found </td>
+                            </tr>
+                          </table>
+                        </div>
+                        <mat-paginator class="sticky-pagination" [length]="dataLength" [pageIndex]="tableSetting.offset"
+                          [pageSize]="tableSetting.size" [pageSizeOptions]="tableSetting.sizeOption"
+                          (page)="onPaginateChange($event)">
+                        </mat-paginator>
+
+
+                      </div>
+                    </div>
+                </div>   
+            </form>
+        </div>
+    </div>
+</div>
