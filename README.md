@@ -1,4 +1,4 @@
-# Angular - WC - Export Data
+# Angular - Practicle task for Devstree IT Service
 
 
 
